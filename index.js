@@ -164,6 +164,24 @@ Use the scoreboard function below to do the following:
 ] */
 // NOTE: There is no test associated with this code; if your output matches the given example, consider it complete!
 
+function scoreboard(inningScoreCB,inningCB,number){
+const scoreByInning = [];
+let homeScore = 0;
+let awayScore = 0;
+
+for(let i = 0; i < number; i++){
+  const currentinning = inningScoreCB(inningCB);
+  homeScore = homeScore + currentinning.Home
+  awayScore = awayScore + currentinning.Away
+  scoreByInning.push(`Inning ${i + 1}: Away ${currentinning.Away} - Home ${currentinning.Home}`)
+}
+if(homeScore === awayScore){
+  scoreByInning.push(`This game will require extra innings: Away ${currentinning.Away} - Home ${currentinning.Home}`)
+}else {
+  scoreByInning.push(`Final Score: Away ${currentinning.Away} - Home ${currentinning.Home}`)
+}
+return scoreByInning
+}
 
 
 
